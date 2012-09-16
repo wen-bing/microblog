@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    -if(user)
+        include say
+    -else
+        div.hero-unit
+            h1 Welcome to Microblog
+            p Microblog is based on Nodejs
+            p 
+                a.btn.btn-primary.btn-large(href="/login") Login
+                |    
+                a.btn.btn-large(href="/reg") Register now
+    include posts

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    form.form-horizontal(method="post", action="/login")
+        legend User Login
+        div.control-group
+            label.control-label(for="username") User Name
+            div.controls
+                input#username.input-xlarge(type="text", name="username")
+                p.help-block Your name used for display and login
+
+        div.control-group
+            label.control-label(for="password") Password
+            div.controls
+                input#password.input-xlarge(type="password", name="password")
+
+        div.form-actions
+            input.btn.btn-primary(type="submit") Login

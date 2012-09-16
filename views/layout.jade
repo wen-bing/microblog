@@ -1,0 +1,48 @@
+doctype 5
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css') 
+        link(rel='stylesheet', href='/stylesheets/style.css') 
+    body
+        div.navbar.navbar-fixed-top
+            div.navbar-inner
+                div.container
+                    a.btn.btn-navbar
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.brand(href="/") Microblog
+                    div.nav-collapse
+                        ui.nav
+                            li.active
+                                a(href="/") Home
+                            -if(!user)
+                                li
+                                    a(href="/login") Login
+                                li
+                                    a(href="/reg") Register
+                            -else
+                                li
+                                    a(href="/u/#{user.name}") #{user.name}
+                                li
+                                    a(href="/logout") Logout
+        
+        div.controls
+            -if(success)
+                p.alert.alert-success #{message}
+            -if(error)
+                p.alert.alert-error #{message}
+
+        div#container.container
+            block content
+
+        hr
+        footer
+            p 
+                a(href="https://github.com/wen-bing/microblog") xxxx 
+                |2012
+
+    script(src="/javascripts/jquery.js")
+    script(src="/javascripts/bootstrap.min.js")

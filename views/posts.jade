@@ -1,0 +1,13 @@
+-posts.forEach(function(post, index){
+    -if(index %3 == 0){
+        div.row
+    -}
+    div.span4
+        h2 
+            a(href="/u/#{post.user}") #{post.user}
+            |    said
+        p
+            small #{post.time}
+        p #{post.post}
+
+-})
